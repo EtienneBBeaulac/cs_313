@@ -11,5 +11,6 @@
     $page = "assignments";
     require "header.php";
   ?>
+  <?php require "bootstrap-includes.php" ?>
 </body>
 </html>

@@ -18,5 +18,6 @@
       </div>
     </div>
   </div>
+  <?php require "bootstrap-includes.php" ?>
 </body>
 </html>
