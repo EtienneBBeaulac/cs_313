@@ -1,11 +1,11 @@
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">Etienne Beaulac</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="<?php echo ($page == "home" ? "active" : "")?>"><a href="./index.php">About Me</a></li>
-      <li class="<?php echo ($page == "assignments" ? "active" : "")?>"><a href="./assignments.php">Assignments</a></li>
-    </ul>
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Etienne Beaulac</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link <?php echo ($page == "home" ? "active" : "")?>" href="./index.php">Home <span class="sr-only">About Me</span></a>
+      <a class="nav-item nav-link <?php echo ($page == "assignments" ? "active" : "")?>" href="./assignments.php">Assignments</a>
   </div>
 </nav>
