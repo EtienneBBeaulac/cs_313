@@ -11,6 +11,12 @@
     $page = "home";
     require "header.php";
   ?>
-  
+  <div class="container">
+    <div class="card">
+      <div class="card-body">
+        Test body
+      </div>
+    </div>
+  </div>
 </body>
 </html>
