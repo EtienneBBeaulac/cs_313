@@ -13,8 +13,9 @@
     require "header.php";
   ?>
   <div class="container">
+  <?php require "carousel.php" ?>
     <div class="card full-page">
-      <?php require "carousel.php" ?>
+      
       <div class="card-body">
         Test body
       </div>
