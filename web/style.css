@@ -1,3 +1,7 @@
 .full-page {
   height: 300px;
 }
+
+.home-carousel {
+  max-height: 40%;
+}
