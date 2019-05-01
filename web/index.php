@@ -12,7 +12,7 @@
     $page = "home";
     require "header.php";
   ?>
-  <div class="container">
+  <div class="container full-page">
     <div class="card">
       <div class="card-body">
         Test body
