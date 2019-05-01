@@ -12,8 +12,8 @@
     $page = "home";
     require "header.php";
   ?>
-  <div class="container full-page">
-    <div class="card">
+  <div class="container">
+    <div class="card full-page">
       <div class="card-body">
         Test body
       </div>
