@@ -16,11 +16,13 @@
     <div class="card full-page">
     <?php require "carousel.php" ?>
       <div class="card-body">
-
           <div class="row justify-content-center">
             <h1 class>Call me ET</h1>
           </div>
-
+          <div class="row justify-content-center">
+            <p>My name is Etienne Beaulac but people call me ET. I am from Quebec, Canada. 
+            My wife's name is Stela and she is from Greece. Our daughter, Kiyomi, is 6 months old.</p>
+          </div>
       </div>
     </div>
   </div>
