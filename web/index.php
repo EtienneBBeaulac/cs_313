@@ -12,10 +12,9 @@
     $page = "home";
     require "header.php";
   ?>
-  <?php require "carousel.php" ?>
   <div class="container">
-  
     <div class="card full-page">
+    <?php require "carousel.php" ?>
       <div class="card-body">
         Test body
       </div>
