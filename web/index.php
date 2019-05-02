@@ -24,6 +24,9 @@
       </div>
     </div>
   </div>
-  <?php require "bootstrap-includes.php" ?>
+  <?php 
+    echo "Today is " . date("Y.m.d");
+    require "bootstrap-includes.php";
+  ?>
 </body>
 </html>
