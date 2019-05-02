@@ -11,5 +11,5 @@
       <a class="nav-item nav-link <?php echo ($page == "assignments" ? "active" : "")?>" href="./assignments.php">Assignments</a>
     </div>
   </div>
-  <span class="navbar-text"><?php echo date("D, M d Y"); ?></span>
+  <span class="navbar-text"><?php echo date("D, M d Y - h:i:sa"); ?></span>
 </nav>
