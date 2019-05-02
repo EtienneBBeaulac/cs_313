@@ -12,14 +12,17 @@
     $page = "home";
     require "header.php";
   ?>
-  <div class="container">
-    <div class="card full-page row justify-content-center">
+    <div class="card full-page">
     <?php require "carousel.php" ?>
       <div class="card-body">
-        <h1 class>Call me ET</h1>
+        <div class="container">
+          <div class="row justify-content-center">
+            <h1 class>Call me ET</h1>
+          </div>
+        </div>
+        
       </div>
     </div>
-  </div>
   <?php require "bootstrap-includes.php" ?>
 </body>
 </html>
