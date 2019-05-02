@@ -12,7 +12,7 @@
     $page = "home";
     require "header.php";
   ?>
-  <div class="container">
+  <div class="container main-container">
     <div class="card full-page">
     <?php require "carousel.php" ?>
       <div class="card-body">
