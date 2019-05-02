@@ -16,11 +16,11 @@
     <div class="card full-page">
     <?php require "carousel.php" ?>
       <div class="card-body">
-        <div class="container">
+
           <div class="row justify-content-center">
             <h1 class>Call me ET</h1>
           </div>
-        </div>
+
       </div>
     </div>
   </div>
