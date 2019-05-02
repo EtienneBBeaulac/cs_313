@@ -12,6 +12,7 @@
     $page = "home";
     require "header.php";
   ?>
+  <div class="container">
     <div class="card full-page">
     <?php require "carousel.php" ?>
       <div class="card-body">
@@ -20,9 +21,9 @@
             <h1 class>Call me ET</h1>
           </div>
         </div>
-        
       </div>
     </div>
+  </div>
   <?php require "bootstrap-includes.php" ?>
 </body>
 </html>
