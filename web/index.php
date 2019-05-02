@@ -13,10 +13,10 @@
     require "header.php";
   ?>
   <div class="container">
-    <div class="card full-page">
+    <div class="card full-page row justify-content-center">
     <?php require "carousel.php" ?>
       <div class="card-body">
-        Test body
+        <h1 class>Call me ET</h1>
       </div>
     </div>
   </div>
