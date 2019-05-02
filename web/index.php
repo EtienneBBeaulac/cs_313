@@ -25,6 +25,7 @@
     </div>
   </div>
   <?php 
+    date_default_timezone_set("America/Boise");
     echo "Today is " . date("Y.m.d");
     require "bootstrap-includes.php";
   ?>
