@@ -7,3 +7,7 @@
   display: block;
   margin: 0 auto;
 }
+
+.main-text {
+  padding: 0.75rem;
+}
