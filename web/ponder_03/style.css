@@ -1,0 +1,46 @@
+.top-container {
+    margin-top: 50px;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}
+
+.order-img {
+    width: 100px;
+    object-fit: contain;
+}
+
+.navbar-text, .navbar-text:active, .navbar-text:hover, .navbar-text:visited {
+    color: white !important;
+}
+
+.cart-img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.empty-cart {
+    color: lightgrey;
+}
+
+.browse-btn {
+    margin-top: 20%;
+    align-self: center;
+}
+
+.header {
+    background-color: lightgray;
+    font-weight: bold;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.cart-item-count {
+    max-width: 70px;
+}
