@@ -11,4 +11,4 @@
     </div>
     <div class="col-sm-1 align-self-center text-center">$<?php echo number_format((float)$itemCount * 500, 2, '.', ''); ?></div>
   </div>
-</form> 
+</form>

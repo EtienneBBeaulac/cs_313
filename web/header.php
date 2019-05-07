@@ -9,6 +9,7 @@
     <div class="navbar-nav">
       <a class="nav-item nav-link <?php echo ($page == "home" ? "active" : "")?>" href="./index.php">Home <span class="sr-only">About Me</span></a>
       <a class="nav-item nav-link <?php echo ($page == "assignments" ? "active" : "")?>" href="./assignments.php">Assignments</a>
+      <a class="nav-item nav-link <?php echo ($page == "team-activities" ? "active" : "")?>" href="./team-activities.php">Team Activities</a>
     </div>
   </div>
   <span class="navbar-text"><?php echo date("D, M d Y"); ?></span>
