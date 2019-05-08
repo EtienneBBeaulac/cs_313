@@ -79,7 +79,6 @@
           $total = 0;
           foreach ($order as $k => $item) {
             $imgSrc = addslashes($item['imgSrc']);
-            // $imgSrc = "https://www.a2btracking.com/wp-content/uploads/2017/07/MSL_RFID-1-e1499715334881.jpg";
             $itemDesc = addslashes($item['itemDesc']);
             $itemCount = addslashes($item['itemCount']);
             $itemId = $k;

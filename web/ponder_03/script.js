@@ -6,6 +6,27 @@ function changeCount(increase, elemId) {
   itemCountInput.value = parseInt(itemCountInput.value) + increase;
 }
 
+$('.itemCount').bind('input', function () {
+  if (this.value < 0) {
+    this.value = 0;
+  }
+  let button = $('#button' + this.id);
+  let itemState = $('#cartItemState' + this.id)[0];
+  let originalCount = $('#cartItemOgCount' + this.id)[0];
+
+  if (this.value != originalCount.value && this.value != 0) {
+    itemState.value = 'save';
+    button.removeClass('btn-danger');
+    button.addClass('btn-success');
+    button.html('<i class="fas fa-save"></i>');
+  } else {
+    itemState.value = 'delete';
+    button.removeClass('btn-success');
+    button.addClass('btn-danger');
+    button.html('<i class="fas fa-trash"></i>');
+  }
+})
+
 
 $("#sameBilling").change(function () {
   if (this.checked) {
