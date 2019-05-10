@@ -17,6 +17,13 @@
   include 'php-elements/header.php';
   if (isset($_POST['billing'])) {
     $billing = $_POST['billing'];
+    $bFirstName = test_input($billing['firstName']);
+    $bLastName = test_input($billing['lastName']);
+    $bAddress1 = test_input($billing['address1']);
+    $bAddress2 = test_input($billing['address2']);
+    $bCity = test_input($billing['city']);
+    $bState = test_input($billing['state']);
+    $bZip = test_input($billing['zip']);
   } else {
     header('Location: browse.php');
   }
@@ -28,10 +35,25 @@
   } else {
     $shipping = $billing;
   }
+  $sFirstName = test_input($shipping['firstName']);
+  $sLastName = test_input($shipping['lastName']);
+  $sAddress1 = test_input($shipping['address1']);
+  $sAddress2 = test_input($shipping['address2']);
+  $sCity = test_input($shipping['city']);
+  $sState = test_input($shipping['state']);
+  $sZip = test_input($shipping['zip']);
   if (isset($_SESSION['cart'])) {
     $order = $_SESSION['cart'];
   } else {
     header('Location: browse.php');
+  }
+
+  function test_input($data)
+  {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
   }
   ?>
 
@@ -43,13 +65,13 @@
         <ul class="list-group mb-3">
           <li class="list-group-item">
             <div>
-              <h6 class="my-0"><?php echo $billing['firstName'] . ' ' . $billing['lastName']; ?></h6>
+              <h6 class="my-0"><?php echo $bFirstName . ' ' . $bLastName; ?></h6>
               <small class="text-muted">
                 <div>
-                  <?php echo $billing['address1'] . (($billing['address2'] !== null && $billing['address2'] !== '') ? ', ' . $billing['address2'] : ''); ?>
+                  <?php echo $bAddress1 . (($bAddress2 !== null && $bAddress2 !== '') ? ', ' . $bAddress2 : ''); ?>
                 </div>
                 <div>
-                  <?php echo $billing['city'] . ' ' . $billing['state'] . ' ' . $billing['zip'] ?>
+                  <?php echo $bCity . ' ' . $bState . ' ' . $bZip ?>
                 </div>
               </small>
             </div>
@@ -59,13 +81,13 @@
         <ul class="list-group mb-3">
           <li class="list-group-item">
             <div>
-              <h6 class="my-0"><?php echo $shipping['firstName'] . ' ' . $shipping['lastName']; ?></h6>
+              <h6 class="my-0"><?php echo $sFirstName . ' ' . $sLastName; ?></h6>
               <small class="text-muted">
                 <div>
-                  <?php echo $shipping['address1'] . (($shipping['address2'] !== null && $shipping['address2'] !== '') ? ', ' . $shipping['address2'] : ''); ?>
+                  <?php echo $sAddress1 . (($sAddress2 !== null && $sAddress2 !== '') ? ', ' . $sAddress2 : ''); ?>
                 </div>
                 <div>
-                  <?php echo $shipping['city'] . ' ' . $shipping['state'] . ' ' . $shipping['zip'] ?>
+                  <?php echo $sCity . ' ' . $sState . ' ' . $sZip ?>
                 </div>
               </small>
             </div>
@@ -111,6 +133,6 @@
   </div>
 
   <?php
-  // session_unset();
+  session_unset();
   ?>
 </body>
