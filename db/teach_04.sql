@@ -91,4 +91,4 @@ VALUES (DEFAULT, 1, 3, 'Blyh blyh blyh', '2019-05-15 23:19:49.738000');
 INSERT INTO "public"."note" ("note_id", "user_id", "talk_id", "note_text", "create_date")
 VALUES (DEFAULT, 1, 3, 'Bloh bloh bloh', '2019-05-15 23:20:04.354000');
 
-SELECT * FROM note where talk_id = 1;
+SELECT * FROM note WHERE talk_id = 1;
