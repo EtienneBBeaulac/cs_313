@@ -9,6 +9,7 @@
 </head>
 
 <body>
+  <h1>Scripture Details</h1>
   <?php
   ini_set('display_errors', 'On');
   error_reporting(E_ALL | E_STRICT);
