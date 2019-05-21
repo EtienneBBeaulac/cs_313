@@ -16,7 +16,7 @@
   include 'database-connection.php';
   if (isset($_GET['bookId'])) {
     $bookId = test_input($_GET['bookId']);
-    $stmt = $db->prepare('SELECT * FROM other.scripture WHERE id=:id');
+    $stmt = $db->prepare('SELECT id, book, chapter, verse, content FROM other.scripture WHERE id=:id');
     $stmt->execute(array(':id' => $bookId));
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
     foreach ($rows as $item) {

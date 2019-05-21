@@ -14,7 +14,7 @@
   ini_set('display_errors', 'On');
   error_reporting(E_ALL | E_STRICT);
   include 'database-connection.php';
-  $stmt = $db->prepare('SELECT * FROM other.scripture');
+  $stmt = $db->prepare('SELECT id, book, chapter, verse, content FROM other.scripture');
   $stmt->execute();
   $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
   foreach ($rows as $item) {
@@ -28,7 +28,7 @@
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
       if (isset($_POST['book'])) {
         $book = test_input($_POST['book']);
-        $stmt = $db->prepare('SELECT * FROM other.scripture WHERE book=:book');
+        $stmt = $db->prepare('SELECT id, book, chapter, verse, content FROM other.scripture WHERE book=:book');
         $stmt->execute(array(':book' => $book));
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         foreach ($rows as $item) {
