@@ -15,9 +15,10 @@
   include 'database-connection.php';
   if (isset($_GET['bookId'])) {
     $bookId = $_GET['bookId'];
-    $item = $db->query("SELECT book, chapter, verse, content FROM other.scripture WHERE id = {$bookId};");
-    echo $item[0];
-    // echo "{$item['book']} {$item['chapter']}:{$item['verse']} - {$item['content']}";
+    foreach ($db->query("SELECT book, chapter, verse, content FROM other.scripture WHERE id = {$bookId};") as $item) {
+    // echo $item[0];
+    echo "{$item['book']} {$item['chapter']}:{$item['verse']} - {$item['content']}";
+    }
   }
   ?>
 </body>
