@@ -13,10 +13,22 @@
 <?php 
 include 'database-connection.php';
 foreach ($db->query('SELECT book, chapter, verse, content FROM other.scripture') as $item) {
-  echo "{$item['book']} {$item['chapter']}:{$item['verse']} - {$item['content']}<br>";
+  echo "<b>{$item['book']} {$item['chapter']}:{$item['verse']}</b> - {$item['content']}<br>";
 }
 ?>
-
+<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+Enter a book name: <input type="text" name="book" id="bookSearch">
+<button type="submit">Search</button><br>
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (isset($_POST['book'])) {
+  foreach ($db->query("SELECT book, chapter, verse, content FROM other.scripture WHERE book = {$_POST['book']}") as $item) {
+      echo "<b>{$item['book']} {$item['chapter']}:{$item['verse']}</b> - {$item['content']}<br>";
+    }
+  }
+}
+?>
+</form>
 </body>
 
 </html>
