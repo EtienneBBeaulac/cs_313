@@ -10,6 +10,8 @@
 
 <body>
   <?php
+  ini_set('display_errors', 'On');
+  error_reporting(E_ALL | E_STRICT);
   include 'database-connection.php';
   if (isset($_GET['bookId'])) {
     $bookId = $_GET['bookId'];

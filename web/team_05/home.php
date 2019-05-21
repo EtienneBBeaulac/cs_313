@@ -11,6 +11,8 @@
 <body>
   <h1>Scripture Resources</h1>
 <?php 
+ini_set('display_errors', 'On');
+error_reporting(E_ALL | E_STRICT);
 include 'database-connection.php';
 foreach ($db->query('SELECT id, book, chapter, verse, content FROM other.scripture') as $item) {
   echo "<a href='view-scripture.php?bookId={$item["id"]}'><b>{$item['book']} {$item['chapter']}:{$item['verse']}</b></a><br>";
