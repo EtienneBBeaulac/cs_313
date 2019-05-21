@@ -20,7 +20,6 @@
       <div class="card-header">Assignments</div>
       <div class="list-group ">
         <a href="ponder_03/browse.php" class="list-group-item list-group-item-action">03 Prove: Assignment - Shopping Cart</a>
-        <a href="team_05/home.php" class="list-group-item list-group-item-action">05 Team</a>
         <a href="project/home.php" class="list-group-item list-group-item-action">Bookmark Project</a>
         <!-- <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
         <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
