@@ -21,14 +21,8 @@ if (!isset($_SESSION['login'])) {
   include 'database-connection.php'; ?>
 <div class="container bookmarks-container">
   <?php
-  foreach ($db->query('SELECT username, password FROM user_account') as $row)
-  {
-    echo 'user: ' . $row['username'];
-    echo ' password: ' . $row['password'];
-    echo '<br/>';
-  }
-  $bookmarks = [['name' => 'bookmark1', 'url' => 'http://www.google.com'], ['name' => 'bookmark2', 'url' => 'http://www.amazon.com']];
-  foreach ($bookmarks as $bm) {
+  // $bookmarks = [['name' => 'bookmark1', 'url' => 'http://www.google.com'], ['name' => 'bookmark2', 'url' => 'http://www.amazon.com']];
+  foreach ($db->query('SELECT bookmark_name, bookmark_url FROM user_bookmark') as $bm) {
     include 'fragments/single-bookmark.php';
   }
   ?>
