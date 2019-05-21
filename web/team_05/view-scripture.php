@@ -11,10 +11,11 @@
 <body>
   <?php
   include 'database-connection.php';
-    if (isset($_GET['bookId'])) {
-      $item = $db->query("SELECT book, chapter, verse, content FROM other.scripture WHERE id = '{$_GET['bookId']}';");
-      echo "{$item['book']} {$item['chapter']}:{$item['verse']} - {$item['content']}";
-    }
+  if (isset($_GET['bookId'])) {
+    $bookId = $_GET['bookId'];
+    $item = $db->query("SELECT book, chapter, verse, content FROM other.scripture WHERE id = {$bookId};");
+    echo "{$item['book']} {$item['chapter']}:{$item['verse']} - {$item['content']}";
+  }
   ?>
 </body>
 
