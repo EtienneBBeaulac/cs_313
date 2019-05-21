@@ -13,7 +13,7 @@
 <?php 
 include 'database-connection.php';
 foreach ($db->query('SELECT book, chapter, verse, content FROM other.scripture') as $item) {
-  echo '{$item["book"]} {$item["chapter"]}:{$item["verse"] - {$item["content"]}<br>';
+  echo "{$item['book']} {$item['chapter']}:{$item['verse']} - {$item['content']}<br>";
 }
 ?>
 
