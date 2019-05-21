@@ -21,7 +21,9 @@ Enter a book name: <input type="text" name="book" id="bookSearch">
 <button type="submit">Search</button><br>
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  echo "first if";
   if (isset($_POST['book'])) {
+    echo "second if";
   foreach ($db->query("SELECT book, chapter, verse, content FROM other.scripture WHERE book = {$_POST['book']}") as $item) {
       echo "<b>{$item['book']} {$item['chapter']}:{$item['verse']}</b> - {$item['content']}<br>";
     }
