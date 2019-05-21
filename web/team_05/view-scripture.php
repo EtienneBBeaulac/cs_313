@@ -16,7 +16,8 @@
   if (isset($_GET['bookId'])) {
     $bookId = $_GET['bookId'];
     $item = $db->query("SELECT book, chapter, verse, content FROM other.scripture WHERE id = {$bookId};");
-    echo "{$item->book} {$item->chapter}:{$item->verse} - {$item->content}";
+    echo $item;
+    // echo "{$item['book']} {$item['chapter']}:{$item['verse']} - {$item['content']}";
   }
   ?>
 </body>
