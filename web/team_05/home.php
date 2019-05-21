@@ -24,6 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   echo "first if";
   if (isset($_POST['book'])) {
     echo "second if";
+    echo "{$_POST['book']}";
   foreach ($db->query("SELECT book, chapter, verse, content FROM other.scripture WHERE book = {$_POST['book']}") as $item) {
       echo "<b>{$item['book']} {$item['chapter']}:{$item['verse']}</b> - {$item['content']}<br>";
     }
