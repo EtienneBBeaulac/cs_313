@@ -20,7 +20,7 @@ if (isset($_SESSION['login'])) {
     <div class="row">
       <div class="user-card" id="bookmark">
         <h1>Sign In</h1>
-        <form action="login.php">
+        <form action="login.php" method="post">
           <div class="input-group mb-3">
             <div class="input-group-append">
               <span class="input-group-text"><i class="fas fa-user"></i></span>
