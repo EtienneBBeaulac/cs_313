@@ -6,7 +6,7 @@ CREATE TABLE user_account
     password VARCHAR (200) NOT NULL,
     password_salt VARCHAR(50) NOT NULL,
     password_hash_algorithm VARCHAR(50) NOT NULL,
-    created_on TIMESTAMP NOT NULL,
+    created_on TIMESTAMP NOT NULL DEFAULT NOW(),
     last_login TIMESTAMP
 );
 
@@ -20,7 +20,7 @@ CREATE TABLE user_bookmark
 			REFERENCES user_account,
 	bookmark_name VARCHAR(200) NOT NULL,
 	bookmark_url TEXT NOT NULL,
-	created_on TIMESTAMP NOT NULL,
+	created_on TIMESTAMP NOT NULL DEFAULT NOW(),
 	last_modified TIMESTAMP NOT NULL
 );
 
@@ -39,7 +39,7 @@ CREATE TABLE user_account_role
 (
 	user_id INT,
 	role_id INT,
-	grant_date TIMESTAMP NOT NULL,
+	grant_date TIMESTAMP NOT NULL DEFAULT NOW(),
 	PRIMARY KEY (user_id, role_id),
 	CONSTRAINT user_account_role_role_id_fkey 
         FOREIGN KEY (role_id)
