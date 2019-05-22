@@ -22,7 +22,10 @@ if (!isset($_SESSION['login'])) {
 <div class="container bookmarks-container">
   <?php
   // $bookmarks = [['name' => 'bookmark1', 'url' => 'http://www.google.com'], ['name' => 'bookmark2', 'url' => 'http://www.amazon.com']];
-  foreach ($db->query('SELECT bookmark_name, bookmark_url FROM user_bookmark') as $bm) {
+  $stmt = $db->prepare('SELECT bookmark_name, bookmark_url FROM user_bookmark WHERE user_id=:user_id');
+  $stmt->execute(array(':user_id' => $_SESSION['login']['id']));
+  $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  foreach ($rows as $bm) {
     include 'fragments/single-bookmark.php';
   }
   ?>

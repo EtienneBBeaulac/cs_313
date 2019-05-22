@@ -35,7 +35,7 @@
             $emailErr = '* Email already in use, <a href="login.php">click here</a> to log in';
           } else {
             $hash = password_hash($password, PASSWORD_DEFAULT);
-            echo "<br>Will register account using this hash: {$hash}";
+            echo "<br>Will register account in database";
           }
         }
       }
@@ -131,30 +131,14 @@
               <button type="submit" name="button" class="btn btn-success">Sign up</button>
             </div>
           </form>
+          <div class="mt-4">
+            <div class="d-flex justify-content-center links">
+              Already have an account? <a href="login-screen.php" class="ml-2">Sign In</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <!-- <div class="container">
-        <div class="row">
-          <div class="col-md-6 mb-3">
-            <label for="username">Username</label>
-            <input class="form-control" type="text" name="username" id="username" placeholder="username" value="<?php echo $username; ?>" required>
-            <div class="invalid-feedback">Valid username is required</div>
-          </div>
-          <div class="col-md-6 mb-3">
-            <label for="password">Password</label>
-            <input class="form-control" type="password" name="password" id="password" placeholder="password" value required>
-            <div class="invalid-feedback"><?php echo $pwErr ?></div>
-          </div>
-        </div>
-        <div class="mb-3">
-          <label for="email">Email</label>
-          <input class="form-control" type="email" name="email" id="email" placeholder="email" value="<?php echo $email; ?>" required>
-          <div class="invalid-feedback">Valid email is required</div>
-        </div>
-        <button type="submit">Sign up</button>
-      </div>
-    </form> -->
     <?php require 'bootstrap-bottom.php' ?>
   </body>
 
