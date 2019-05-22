@@ -33,21 +33,21 @@
     {
       if (!empty($pw) && ($pw == $cpw)) {
         if (strlen($_POST["password"]) < 8) {
-          $passwordErr = "Your password must contain at least 8 characters";
+          $passwordErr = "* Your password must contain at least 8 characters";
         } elseif (!preg_match("#[0-9]+#", $pw)) {
-          $passwordErr = "Your password must contain at least 1 number!";
+          $passwordErr = "* Your password must contain at least 1 number!";
         } elseif (!preg_match("#[A-Z]+#", $pw)) {
-          $passwordErr = "Your password must contain at least 1 capital letter!";
+          $passwordErr = "* Your password must contain at least 1 capital letter!";
         } elseif (!preg_match("#[a-z]+#", $pw)) {
-          $passwordErr = "Your password must contain at least 1 lowercase letter!";
+          $passwordErr = "* Your password must contain at least 1 lowercase letter!";
         } else {
           $passwordErr = '';
           $cpasswordErr = '';
         }
       } elseif (!empty($_POST["password"])) {
-        $cpasswordErr = "Passwords must match";
+        $cpasswordErr = "* Passwords must match";
       } else {
-        $passwordErr = "Valid password is required";
+        $passwordErr = "* Valid password is required";
       }
       return ['pwErr' => $passwordErr, 'cpwErr' => $cpasswordErr];
     }
@@ -61,7 +61,7 @@
               <div class="input-group-append">
                 <span class="input-group-text"><i class="fas fa-user"></i></span>
               </div>
-              <input type="text" name="username" id="username" class="form-control" value="" placeholder="username" required>
+              <input type="text" name="username" id="username" class="form-control" value="<?php echo $username ?>" placeholder="username" required>
             </div>
             <div class="invalid-feedback <?php echo $unErr == '' ? '' : 'd-block' ?>"><?php echo $unErr ?></div>
             <div class="input-group mb-2">
