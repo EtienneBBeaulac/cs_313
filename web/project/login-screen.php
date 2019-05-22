@@ -12,7 +12,7 @@ if (isset($_SESSION['login'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Login</title>
-  <?php include 'header-links.php' ?>
+  <?php require 'header-links.php' ?>
 </head>
 
 <body>
@@ -48,7 +48,7 @@ if (isset($_SESSION['login'])) {
       </div>
     </div>
   </div>
-  <?php include 'bootstrap-bottom.php' ?>
+  <?php require 'bootstrap-bottom.php' ?>
 </body>
 
 </html>

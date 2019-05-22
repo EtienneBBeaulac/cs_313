@@ -1,8 +1,8 @@
 <?php
 session_start();
-$_SESSION['login'] = "";
+// $_SESSION['login'] = "";
 if (!isset($_SESSION['login'])) {
-  header('Location: login-screen.php');
+  header('Location: logout.php');
 }
 ?>
 <!DOCTYPE html>

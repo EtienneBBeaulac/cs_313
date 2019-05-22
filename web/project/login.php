@@ -1,26 +1,37 @@
 <?php
 session_start();
-include 'database-connection.php';
+require 'database-connection.php';
 
 if (isset($_POST['username']) && isset($_POST['password'])) {
-  $user = $db->query('SELECT username, password FROM user_account WHERE username = $_POST["username"]');
-  if (password_verify($_POST['password'], $user['password'])) {
-    loginSuccess();
-  } else {
-    loginFailed();
+  $username = test_input($_POST['username']);
+  $password = test_input($_POST['password']);
+
+  $stmt = $db->prepare('SELECT * FROM table WHERE username=:username');
+  $stmt->execute(array(':username' => $username));
+  $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+  foreach ($rows as $user) {
+    if (password_verify($password, $user['password'])) {
+      loginSuccess($user);
+    } else {
+      loginFailed();
+    }
   }
 } else {
   loginFailed();
 }
 
-function loginSuccess() {
+function loginSuccess($user)
+{
   echo 'success!';
+  $_SESSION['login'] = ['id' => $user['id'], 'username' => $user['username'], 'email' => $user['email']];
   header('Location: home.php');
   die();
 }
 
-function loginFailed() {
+function loginFailed()
+{
   echo 'failed!';
-  header('Location: login-screen.php');
+  header('Location: logout.php');
   die();
 }
