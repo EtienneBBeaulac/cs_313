@@ -31,18 +31,21 @@
     }
     function checkPassword($pw, $cpw)
     {
+      $passwordErr = '';
+      $cpasswordErr = '';
       if (!empty($pw) && ($pw == $cpw)) {
         if (strlen($_POST["password"]) < 8) {
+          echo 'must be 8';
           $passwordErr = "* Your password must contain at least 8 characters";
         } elseif (!preg_match("#[0-9]+#", $pw)) {
+          echo 'must have 1 number';
           $passwordErr = "* Your password must contain at least 1 number!";
         } elseif (!preg_match("#[A-Z]+#", $pw)) {
+          echo 'must have 1 cap';
           $passwordErr = "* Your password must contain at least 1 capital letter!";
         } elseif (!preg_match("#[a-z]+#", $pw)) {
+          echo 'must have 1 lower';
           $passwordErr = "* Your password must contain at least 1 lowercase letter!";
-        } else {
-          $passwordErr = '';
-          $cpasswordErr = '';
         }
       } elseif (!empty($_POST["password"])) {
         $cpasswordErr = "* Passwords must match";
