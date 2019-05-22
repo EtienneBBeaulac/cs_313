@@ -16,6 +16,7 @@
     $unErr = '';
     $pwErr = '';
     $cpwErr = '';
+    $emailErr = '';
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
       if (isset($_POST['username']) && isset($_POST['password'])  && isset($_POST['cpassword']) && isset($_POST['email'])) {
         require 'database-connection.php';
@@ -28,17 +29,43 @@
         $pwErr = $errors['pwErr'];
         $cpwErr = $errors['cpwErr'];
         if ($unErr == '' && $pwErr == '' && $cpwErr == '') {
-          $stmt = $db->prepare('SELECT username FROM user_account WHERE username=:username');
-          $stmt->execute(array(':username' => $username));
-          $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-          foreach ($rows as $item) {
-            if ($item['username'] == $username) {
-              $unErr = "* Username already exists";
-            }
+          if (!isUsernameAvailable($db, $username)) {
+            $unErr = '* Username already in use';
+          } elseif (!isEmailAvailable($db, $email)) {
+            $emailErr = '* Email already in use, <a href="login.php">click here</a> to log in';
+          } else {
+            echo '<br>Will register account';
           }
         }
       }
     }
+
+    function isEmailAvailable($db, $email)
+    {
+      $stmt = $db->prepare('SELECT email FROM user_account WHERE email=:email');
+      $stmt->execute(array(':email' => $email));
+      $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+      foreach ($rows as $item) {
+        if ($item['email'] == $email) {
+          return false;
+        }
+      }
+      return true;
+    }
+
+    function isUsernameAvailable($db, $username)
+    {
+      $stmt = $db->prepare('SELECT username FROM user_account WHERE username=:username');
+      $stmt->execute(array(':username' => $username));
+      $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+      foreach ($rows as $item) {
+        if ($item['username'] == $username) {
+          return false;
+        }
+      }
+      return true;
+    }
+
     function checkPassword($pw, $cpw)
     {
       $passwordErr = '';
@@ -65,6 +92,7 @@
       return ['pwErr' => $passwordErr, 'cpwErr' => $cpasswordErr];
     }
     ?>
+    
     <div class="container vertical-center justify-content-center">
       <div class="row">
         <div class="user-card" id="bookmark">
@@ -91,12 +119,13 @@
               <input type="password" name="cpassword" id="cpassword" class="form-control" value="" placeholder="confirm password" required>
             </div>
             <div class="invalid-feedback mb-2 d-block"><?php echo $cpwErr ?></div>
-            <div class="input-group mb-3">
+            <div class="input-group">
               <div class="input-group-append">
                 <span class="input-group-text"><i class="fas fa-envelope"></i></span>
               </div>
               <input type="email" name="email" id="email" class="form-control" value="<?php echo $email ?>" placeholder="email" required>
             </div>
+            <div class="invalid-feedback mb-3 d-block"><?php echo $emailErr ?></div>
             <div class="d-flex justify-content-center mt-3 login_container">
               <button type="submit" name="button" class="btn btn-success">Sign up</button>
             </div>
