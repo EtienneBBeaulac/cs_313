@@ -13,8 +13,9 @@
     <?php
     $username = '';
     $email = '';
-    $pwErr = 'Valid password is required';
-    $cpwErr = 'Passwords must match';
+    $unErr = '';
+    $pwErr = '';
+    $cpwErr = '';
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
       if (isset($_POST['username']) && isset($_POST['password'])  && isset($_POST['cpassword']) && isset($_POST['email'])) {
         require 'database-connection.php';
@@ -56,38 +57,33 @@
         <div class="user-card" id="bookmark">
           <h1>Sign Up</h1>
           <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-            <!-- <label for="username">Username</label> -->
             <div class="input-group mb-2">
               <div class="input-group-append">
                 <span class="input-group-text"><i class="fas fa-user"></i></span>
               </div>
               <input type="text" name="username" id="username" class="form-control" value="" placeholder="username" required>
             </div>
-            <div class="invalid-feedback">Valid username is required</div>
-            <!-- <label for="password">Password</label> -->
+            <div class="invalid-feedback <?php echo $unErr == '' ? '' : 'd-block' ?>"><?php echo $unErr ?></div>
             <div class="input-group mb-2">
               <div class="input-group-append">
                 <span class="input-group-text"><i class="fas fa-key"></i></span>
               </div>
               <input type="password" name="password" id="password" class="form-control" value="" placeholder="password" required>
             </div>
-            <div class="invalid-feedback"><?php echo $pwErr ?></div>
-            <!-- <label for="cpassword">Confirm Password</label> -->
+            <div class="invalid-feedback <?php echo $cpwErr == '' ? '' : 'd-block' ?>"><?php echo $pwErr ?></div>
             <div class="input-group mb-2">
               <div class="input-group-append">
                 <span class="input-group-text"><i class="fas fa-key"></i></span>
               </div>
               <input type="password" name="cpassword" id="cpassword" class="form-control" value="" placeholder="confirm password" required>
             </div>
-            <div class="invalid-feedback"><?php echo $cpwErr ?></div>
-            <!-- <label for="Email">Email</label> -->
+            <div class="invalid-feedback <?php echo $cpwErr == '' ? '' : 'd-block' ?>"><?php echo $cpwErr ?></div>
             <div class="input-group mb-3">
               <div class="input-group-append">
                 <span class="input-group-text"><i class="fas fa-envelope"></i></span>
               </div>
               <input type="email" name="email" id="email" class="form-control" value="<?php echo $email ?>" placeholder="email" required>
             </div>
-            <div class="invalid-feedback">Valid email is required</div>
             <div class="d-flex justify-content-center mt-3 login_container">
               <button type="submit" name="button" class="btn btn-success">Sign up</button>
             </div>
