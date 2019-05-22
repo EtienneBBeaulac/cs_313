@@ -25,13 +25,13 @@ if (isset($_SESSION['login'])) {
             <div class="input-group-append">
               <span class="input-group-text"><i class="fas fa-user"></i></span>
             </div>
-            <input type="text" name="" class="form-control" value="" placeholder="username">
+            <input type="text" name="username" class="form-control" value="" placeholder="username" required>
           </div>
           <div class="input-group mb-2">
             <div class="input-group-append">
               <span class="input-group-text"><i class="fas fa-key"></i></span>
             </div>
-            <input type="password" name="" class="form-control" value="" placeholder="password">
+            <input type="password" name="password" class="form-control" value="" placeholder="password" required>
           </div>
           <div class="d-flex justify-content-center mt-3 login_container">
             <button type="submit" name="button" class="btn btn-warning">Login</button>
