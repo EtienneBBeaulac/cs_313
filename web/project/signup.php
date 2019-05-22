@@ -23,7 +23,7 @@
         $email = test_input($_POST['email']);
         $password = test_input($_POST['password']);
         $cpassword = test_input($_POST['cpassword']);
-        $unErr = !preg_match("/^[0-9a-zA-Z_]{5,}$/", $username === 0) ? 'Username must be bigger than 5 characters and contain only numbers and letters' : '';
+        $unErr = preg_match("/^[0-9a-zA-Z_]{5,}$/", $username) ? '* Username must be bigger than 5 characters and contain only numbers, letters, and underscores' : '';
         $errors = checkPassword($password, $cpassword);
         $pwErr = $errors['pwErr'];
         $cpwErr = $errors['cpwErr'];
