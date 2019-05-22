@@ -33,49 +33,6 @@
           $addressType = 'billing';
           require 'php-elements/checkout-form.php';
           ?>
-          <!-- <div class="row">
-            <div class="col-md-6 mb-3">
-              <label for="firstName">First name</label>
-              <input class="form-control" type="text" name="firstName" id="first-name" placeholder value required>
-              <div class="invalid-feedback">Valid first name is required</div>
-            </div>
-            <div class="col-md-6 mb-3">
-              <label for="lastName">Last name</label>
-              <input class="form-control" type="text" name="lastName" id="lastName" placeholder value required>
-              <div class="invalid-feedback">Valid last name is required</div>
-            </div>
-          </div>
-          <div class="mb-3">
-            <label for="email">Email</label>
-            <input class="form-control" type="email" name="email" id="email" placeholder value required>
-            <div class="invalid-feedback">Valid email is required</div>
-          </div>
-          <div class="mb-3">
-            <label for="address1">Address</label>
-            <input class="form-control" type="text" name="address1" id="address1" placeholder value required>
-            <div class="invalid-feedback">Valid address is required</div>
-          </div>
-          <div class="mb-3">
-            <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>
-            <input class="form-control" type="text" name="address2" id="address2" placeholder value>
-          </div>
-          <div class="row">
-            <div class="col-md-4 mb-3">
-              <label for="city">City</label>
-              <input class="form-control" type="text" name="city" id="city" placeholder value required>
-              <div class="invalid-feedback">Valid city is required</div>
-            </div>
-            <div class="col-md-4 mb-3">
-              <label for="zip">Zip</label>
-              <input class="form-control" type="text" name="zip" id="zip" placeholder value required>
-              <div class="invalid-feedback">Valid zip code is required</div>
-            </div>
-            <div class="col-md-4 mb-3">
-              <label for="country">Country</label>
-              <input class="form-control" type="text" name="country" id="country" placeholder value required>
-              <div class="invalid-feedback">Valid country is required</div>
-            </div>
-          </div> -->
           <hr class="mb-4">
           <h4 class="mb-3">Shipping Address</h4>
           <div class="custom-control custom-checkbox mb-3">
