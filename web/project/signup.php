@@ -36,6 +36,7 @@
           } else {
             $hash = password_hash($password, PASSWORD_DEFAULT);
             echo "<br>Will register account in database";
+            echo "<br>{$hash}";
           }
         }
       }
