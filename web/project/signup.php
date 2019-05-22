@@ -69,7 +69,7 @@
               </div>
               <input type="text" name="username" id="username" class="form-control" value="<?php echo $username ?>" placeholder="username" required>
             </div>
-            <div class="invalid-feedback mb-2"><?php echo $unErr ?></div>
+            <div class="invalid-feedback mb-2 d-block"><?php echo $unErr ?></div>
             <div class="input-group">
               <div class="input-group-append">
                 <span class="input-group-text"><i class="fas fa-key"></i></span>
