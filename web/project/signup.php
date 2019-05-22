@@ -23,10 +23,13 @@
         $email = test_input($_POST['email']);
         $password = test_input($_POST['password']);
         $cpassword = test_input($_POST['cpassword']);
+        $unErr = preg_match("/^[0-9a-zA-Z_]{5,}$/", $username === 0) ? 'Username must be bigger than 5 characters and contain only numbers and letters' : '';
         $errors = checkPassword($password, $cpassword);
         $pwErr = $errors['pwErr'];
         $cpwErr = $errors['cpwErr'];
-        echo "{$username}, {$password}, {$cpassword}, {$email}<br>{$pwErr}, {$cpErr}";
+        if ($unErr == '' && $pwErr == '' && $cpwErr == '') {
+          echo '<br>Succesful sign up';
+        }
       }
     }
     function checkPassword($pw, $cpw)
@@ -39,13 +42,13 @@
           $passwordErr = "* Your password must contain at least 8 characters";
         } elseif (!preg_match("#[0-9]+#", $pw)) {
           echo 'must have 1 number';
-          $passwordErr = "* Your password must contain at least 1 number!";
+          $passwordErr = "* Your password must contain at least 1 number";
         } elseif (!preg_match("#[A-Z]+#", $pw)) {
           echo 'must have 1 cap';
-          $passwordErr = "* Your password must contain at least 1 capital letter!";
+          $passwordErr = "* Your password must contain at least 1 capital letter";
         } elseif (!preg_match("#[a-z]+#", $pw)) {
           echo 'must have 1 lower';
-          $passwordErr = "* Your password must contain at least 1 lowercase letter!";
+          $passwordErr = "* Your password must contain at least 1 lowercase letter";
         }
       } elseif (!empty($_POST["password"])) {
         $cpasswordErr = "* Passwords must match";
@@ -60,27 +63,27 @@
         <div class="user-card" id="bookmark">
           <h1>Sign Up</h1>
           <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-            <div class="input-group mb-2">
+            <div class="input-group">
               <div class="input-group-append">
                 <span class="input-group-text"><i class="fas fa-user"></i></span>
               </div>
               <input type="text" name="username" id="username" class="form-control" value="<?php echo $username ?>" placeholder="username" required>
             </div>
-            <div class="invalid-feedback <?php echo $unErr == '' ? '' : 'd-block' ?>"><?php echo $unErr ?></div>
-            <div class="input-group mb-2">
+            <div class="invalid-feedback mb-2 <?php echo $unErr == '' ? '' : 'd-block' ?>"><?php echo $unErr ?></div>
+            <div class="input-group">
               <div class="input-group-append">
                 <span class="input-group-text"><i class="fas fa-key"></i></span>
               </div>
               <input type="password" name="password" id="password" class="form-control" value="" placeholder="password" required>
             </div>
-            <div class="invalid-feedback <?php echo $pwErr == '' ? '' : 'd-block' ?>"><?php echo $pwErr ?></div>
-            <div class="input-group mb-2">
+            <div class="invalid-feedback mb-2 <?php echo $pwErr == '' ? '' : 'd-block' ?>"><?php echo $pwErr ?></div>
+            <div class="input-group">
               <div class="input-group-append">
                 <span class="input-group-text"><i class="fas fa-key"></i></span>
               </div>
               <input type="password" name="cpassword" id="cpassword" class="form-control" value="" placeholder="confirm password" required>
             </div>
-            <div class="invalid-feedback <?php echo $cpwErr == '' ? '' : 'd-block' ?>"><?php echo $cpwErr ?></div>
+            <div class="invalid-feedback mb-2 <?php echo $cpwErr == '' ? '' : 'd-block' ?>"><?php echo $cpwErr ?></div>
             <div class="input-group mb-3">
               <div class="input-group-append">
                 <span class="input-group-text"><i class="fas fa-envelope"></i></span>
