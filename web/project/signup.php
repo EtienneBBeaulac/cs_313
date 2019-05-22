@@ -34,7 +34,8 @@
           } elseif (!isEmailAvailable($db, $email)) {
             $emailErr = '* Email already in use, <a href="login.php">click here</a> to log in';
           } else {
-            echo '<br>Will register account';
+            $hash = password_hash($password, PASSWORD_DEFAULT);
+            echo "<br>Will register account using this hash: {$hash}";
           }
         }
       }
@@ -92,7 +93,7 @@
       return ['pwErr' => $passwordErr, 'cpwErr' => $cpasswordErr];
     }
     ?>
-    
+
     <div class="container vertical-center justify-content-center">
       <div class="row">
         <div class="user-card" id="bookmark">
