@@ -28,7 +28,14 @@
         $pwErr = $errors['pwErr'];
         $cpwErr = $errors['cpwErr'];
         if ($unErr == '' && $pwErr == '' && $cpwErr == '') {
-          echo '<br>Succesful sign up';
+          $stmt = $db->prepare('SELECT username FROM user_account WHERE username=:username');
+          $stmt->execute(array(':username' => $username));
+          $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+          foreach ($rows as $item) {
+            if ($item['username'] == $username) {
+              $unErr = "* Username already exists";
+            }
+          }
         }
       }
     }

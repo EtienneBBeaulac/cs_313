@@ -6,7 +6,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
   $username = test_input($_POST['username']);
   $password = test_input($_POST['password']);
 
-  $stmt = $db->prepare('SELECT * FROM table WHERE username=:username');
+  $stmt = $db->prepare('SELECT * FROM user_account WHERE username=:username');
   $stmt->execute(array(':username' => $username));
   $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
