@@ -26,7 +26,7 @@
         $errors = checkPassword($password, $cpassword);
         $pwErr = $errors['pwErr'];
         $cpwErr = $errors['cpwErr'];
-        echo "{$username}, {$password}, {$cpassword}, {$email}";
+        echo "{$username}, {$password}, {$cpassword}, {$email}<br>{$pwErr}, {$cpErr}";
       }
     }
     function checkPassword($pw, $cpw)
