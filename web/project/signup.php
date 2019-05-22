@@ -73,7 +73,7 @@
               </div>
               <input type="password" name="password" id="password" class="form-control" value="" placeholder="password" required>
             </div>
-            <div class="invalid-feedback <?php echo $cpwErr == '' ? '' : 'd-block' ?>"><?php echo $pwErr ?></div>
+            <div class="invalid-feedback <?php echo $pwErr == '' ? '' : 'd-block' ?>"><?php echo $pwErr ?></div>
             <div class="input-group mb-2">
               <div class="input-group-append">
                 <span class="input-group-text"><i class="fas fa-key"></i></span>
