@@ -83,7 +83,7 @@
             <label for="Email">Email</label>
             <div class="input-group mb-3">
               <div class="input-group-append">
-                <span class="input-group-text"><i class="fas fa-mail"></i></span>
+                <span class="input-group-text"><i class="fas fa-envelope"></i></span>
               </div>
               <input type="email" name="email" id="email" class="form-control" value="<?php echo $email ?>" placeholder="email" required>
               <div class="invalid-feedback">Valid email is required</div>
