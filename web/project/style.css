@@ -11,8 +11,7 @@ body {
     background: rgba(255, 255, 255, 0.1) !important;
 }
 
-.user-card, .signup-card {
-
+.user-card {
     width: 350px;
     margin-top: auto;
     margin-bottom: auto;
@@ -22,14 +21,11 @@ body {
     justify-content: center;
     flex-direction: column;
     padding: 10px;
+    padding-bottom: 50px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 5px;
-}
-
-.signup-card {
-    height: 500px;
 }
 
 #bookmark:after {
