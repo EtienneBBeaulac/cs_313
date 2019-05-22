@@ -52,50 +52,50 @@
     }
     ?>
     <div class="container vertical-center justify-content-center">
-    <div class="row">
-      <div class="user-card" id="bookmark">
-        <h1>Sign Up</h1>
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-          <div class="input-group mb-3">
-          <label for="username">Username</label>
-            <div class="input-group-append">
-              <span class="input-group-text"><i class="fas fa-user"></i></span>
+      <div class="row">
+        <div class="user-card" id="bookmark">
+          <h1>Sign Up</h1>
+          <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+            <label for="username">Username</label>
+            <div class="input-group mb-3">
+              <div class="input-group-append">
+                <span class="input-group-text"><i class="fas fa-user"></i></span>
+              </div>
+              <input type="text" name="username" id="username" class="form-control" value="" placeholder="username" required>
+              <div class="invalid-feedback">Valid username is required</div>
             </div>
-            <input type="text" name="username" id="username" class="form-control" value="" placeholder="username" required>
-            <div class="invalid-feedback">Valid username is required</div>
-          </div>
-          <div class="input-group mb-2">
-          <label for="password">Password</label>
-            <div class="input-group-append">
-              <span class="input-group-text"><i class="fas fa-key"></i></span>
+            <label for="password">Password</label>
+            <div class="input-group mb-2">
+              <div class="input-group-append">
+                <span class="input-group-text"><i class="fas fa-key"></i></span>
+              </div>
+              <input type="password" name="password" id="password" class="form-control" value="" placeholder="password" required>
+              <div class="invalid-feedback"><?php echo $pwErr ?></div>
             </div>
-            <input type="password" name="password" id="password" class="form-control" value="" placeholder="password">
-            <div class="invalid-feedback"><?php echo $pwErr ?></div>
-          </div>
-          <div class="input-group mb-2">
-          <label for="cpassword">Confirm Password</label>
-            <div class="input-group-append">
-              <span class="input-group-text"><i class="fas fa-key"></i></span>
+            <label for="cpassword">Confirm Password</label>
+            <div class="input-group mb-2">
+              <div class="input-group-append">
+                <span class="input-group-text"><i class="fas fa-key"></i></span>
+              </div>
+              <input type="password" name="cpassword" id="cpassword" class="form-control" value="" placeholder="confirm password" required>
+              <div class="invalid-feedback"><?php echo $cpwErr ?></div>
             </div>
-            <input type="password" name="cpassword" id="cpassword" class="form-control" value="" placeholder="confirm password">
-            <div class="invalid-feedback"><?php echo $cpwErr ?></div>
-          </div>
-          <div class="input-group mb-3">
-          <label for="Email">Email</label>
-            <div class="input-group-append">
-              <span class="input-group-text"><i class="fas fa-email"></i></span>
+            <label for="Email">Email</label>
+            <div class="input-group mb-3">
+              <div class="input-group-append">
+                <span class="input-group-text"><i class="fas fa-mail"></i></span>
+              </div>
+              <input type="email" name="email" id="email" class="form-control" value="<?php echo $email ?>" placeholder="email" required>
+              <div class="invalid-feedback">Valid email is required</div>
             </div>
-            <input type="email" name="email" id="email" class="form-control" value="<?php echo $email ?>" placeholder="email" required>
-            <div class="invalid-feedback">Valid email is required</div>
-          </div>
-          <div class="d-flex justify-content-center mt-3 login_container">
-            <button type="submit" name="button" class="btn btn-success">Sign up</button>
-          </div>
-        </form>
+            <div class="d-flex justify-content-center mt-3 login_container">
+              <button type="submit" name="button" class="btn btn-success">Sign up</button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
-  </div>
-      <!-- <div class="container">
+    <!-- <div class="container">
         <div class="row">
           <div class="col-md-6 mb-3">
             <label for="username">Username</label>
