@@ -70,7 +70,7 @@
                 <span class="input-group-text"><i class="fas fa-key"></i></span>
               </div>
               <div>
-                <input type="password" name="password" id="password" class="form-control" value="" placeholder="password" required>
+                <input type="password" name="password" id="password" class="form-control" value="" placeholder="password" required><br>
                 <div class="invalid-feedback"><?php echo $pwErr ?></div>
               </div>
             </div>
