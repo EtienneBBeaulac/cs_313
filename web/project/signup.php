@@ -23,7 +23,7 @@
         $email = test_input($_POST['email']);
         $password = test_input($_POST['password']);
         $cpassword = test_input($_POST['cpassword']);
-        $unErr = preg_match("/^[0-9a-zA-Z_]{5,}$/", $username === 0) ? 'Username must be bigger than 5 characters and contain only numbers and letters' : '';
+        $unErr = !preg_match("/^[0-9a-zA-Z_]{5,}$/", $username === 0) ? 'Username must be bigger than 5 characters and contain only numbers and letters' : '';
         $errors = checkPassword($password, $cpassword);
         $pwErr = $errors['pwErr'];
         $cpwErr = $errors['cpwErr'];
@@ -76,14 +76,14 @@
               </div>
               <input type="password" name="password" id="password" class="form-control" value="" placeholder="password" required>
             </div>
-            <div class="invalid-feedback mb-2 <?php echo $pwErr == '' ? '' : 'd-block' ?>"><?php echo $pwErr ?></div>
+            <div class="invalid-feedback mb-2 d-block"><?php echo $pwErr ?></div>
             <div class="input-group">
               <div class="input-group-append">
                 <span class="input-group-text"><i class="fas fa-key"></i></span>
               </div>
               <input type="password" name="cpassword" id="cpassword" class="form-control" value="" placeholder="confirm password" required>
             </div>
-            <div class="invalid-feedback mb-2 <?php echo $cpwErr == '' ? '' : 'd-block' ?>"><?php echo $cpwErr ?></div>
+            <div class="invalid-feedback mb-2 d-block"><?php echo $cpwErr ?></div>
             <div class="input-group mb-3">
               <div class="input-group-append">
                 <span class="input-group-text"><i class="fas fa-envelope"></i></span>
