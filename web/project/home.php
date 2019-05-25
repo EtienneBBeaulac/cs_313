@@ -9,6 +9,10 @@ function matchesSearch($term, $search, $percentage) {
   $term = strtoupper($term);
   $search = strtoupper($search);
 
+  if (strpos($term, $search) !== false) {
+    return true;
+  }
+
   similar_text($term, $search, $percent);
   echo $percent;
   if ($percent > $percentage) {
