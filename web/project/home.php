@@ -26,10 +26,11 @@ if (!isset($_SESSION['login'])) {
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
     if (!empty($rows)) {
       require 'fragments/bookmarks-utilities.php';
-
+      echo '<div class="row">';
       foreach ($rows as $bm) {
         require 'fragments/single-bookmark.php';
       }
+      echo '</div>';
     } else {
       echo "You have no bookmarks";
     }
