@@ -8,7 +8,7 @@ if (!isset($_SESSION['login'])) {
 function matchesSearch($bm, $search) {
   $bm = strtoupper($bm);
   $search = strtoupper($search);
-  
+
   similar_text($bm, $search, $percent);
   if ($percent > 75) {
     return true;
@@ -46,7 +46,7 @@ function matchesSearch($bm, $search) {
       $search = isset($_GET['search']) ? test_input($_GET['search']) : '';
       echo '<div class="container">';
       foreach ($rows as $bm) {
-        if (matchesSearch($bm, $search)) {
+        if ($search != '' && matchesSearch($bm, $search)) {
           require 'fragments/single-bookmark.php';
         }
       }
