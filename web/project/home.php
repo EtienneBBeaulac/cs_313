@@ -48,6 +48,7 @@ function matchesSearch($term, $search, $percentage) {
     if (!empty($rows)) {
       $search = isset($_GET['search']) ? test_input($_GET['search']) : '';
       echo '<div class="container">';
+      require 'fragments/add-bookmark-button.php';
       foreach ($rows as $bm) {
         if ($search == '' || matchesSearch($bm['bookmark_name'], $search, 30)) {
           require 'fragments/single-bookmark.php';
