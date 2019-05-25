@@ -8,6 +8,6 @@
         </form>
     </div>
     <div class="col-auto">
-        <button class="btn btn-outline-success"><i class="fas fa-edit"></i> Edit</button>
+        <button class="btn btn-outline-secondary"><i class="fas fa-edit"></i> Edit</button>
     </div>
 </div>
