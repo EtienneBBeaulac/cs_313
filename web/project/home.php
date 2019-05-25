@@ -5,17 +5,17 @@ if (!isset($_SESSION['login'])) {
   header('Location: logout.php');
 }
 
-function matchesSearch($bm, $search) {
-  $bm = strtoupper($bm);
+function matchesSearch($term, $search, $percentage) {
+  $term = strtoupper($term);
   $search = strtoupper($search);
 
-  similar_text($bm, $search, $percent);
-  if ($percent > 75) {
+  similar_text($term, $search, $percent);
+  if ($percent > $percentage) {
     return true;
   }
 
-  similar_text($search, $bm, $percent);
-  if ($percent > 75) {
+  similar_text($search, $term, $percent);
+  if ($percent > $percentage) {
     return true;
   }
 
@@ -46,7 +46,7 @@ function matchesSearch($bm, $search) {
       $search = isset($_GET['search']) ? test_input($_GET['search']) : '';
       echo '<div class="container">';
       foreach ($rows as $bm) {
-        if ($search != '' && matchesSearch($bm, $search)) {
+        if (matchesSearch($bm['bookmark_name'], $search, 75)) {
           require 'fragments/single-bookmark.php';
         }
       }
