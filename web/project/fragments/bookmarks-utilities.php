@@ -7,7 +7,7 @@
           </div>
         </form>
     </div>
-    <div class="col-md">
+    <div class="col">
         <button class="btn btn-outline-success"><i class="fas fa-plus"></i> Add</button>
     </div>
 </div>
