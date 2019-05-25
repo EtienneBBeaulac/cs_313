@@ -26,7 +26,7 @@ if (!isset($_SESSION['login'])) {
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
     if (!empty($rows)) {
       require 'fragments/bookmarks-utilities.php';
-      echo '<div class="row">';
+      echo '<div class="container">';
       foreach ($rows as $bm) {
         require 'fragments/single-bookmark.php';
       }
