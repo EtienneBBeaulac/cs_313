@@ -55,6 +55,7 @@ body {
 
 .list-group-item {
     background: rgba(255, 255, 255, 0.16);
+    border: 1px solid rgba(255, 255, 255, 0.16);
 }
 
 .bookmarks-container a {
@@ -68,8 +69,8 @@ body {
 }
 
 .add-bookmark {
-    background: rgba(0, 0, 0, 0) !important;
-    border: 1px solid #28A745 !important;
-    font-size: 30px !important;
-    color: #28A745 !important;
+    background: rgba(0, 0, 0, 0);
+    border: 1px solid #28A745;
+    font-size: 24px;
+    color: #28A745;
 }
