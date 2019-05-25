@@ -104,7 +104,7 @@
               <div class="input-group-append">
                 <span class="input-group-text"><i class="fas fa-user"></i></span>
               </div>
-              <input type="text" name="username" id="username" class="form-control" value="<?php echo $username ?>" placeholder="username" required>
+              <input type="text" name="username" id="username" class="form-control" value="<?php echo $username ?>" placeholder="username" required autofocus>
             </div>
             <div class="invalid-feedback mb-2 d-block"><?php echo $unErr ?></div>
             <div class="input-group">

@@ -25,7 +25,7 @@ if (isset($_SESSION['login'])) {
             <div class="input-group-append">
               <span class="input-group-text"><i class="fas fa-user"></i></span>
             </div>
-            <input type="text" name="username" class="form-control" value="" placeholder="username" required>
+            <input type="text" name="username" class="form-control" value="" placeholder="username" required autofocus>
           </div>
           <div class="input-group mb-2">
             <div class="input-group-append">
