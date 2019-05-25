@@ -1,4 +1,4 @@
-<div class="row">
+<div class="container">
     <div class="col-md-4">
         <form class="input-group mb-3" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="get">
           <input type="text" name="search" class="form-control" placeholder="Search...">
