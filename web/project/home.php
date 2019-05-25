@@ -1,6 +1,5 @@
 <?php
 session_start();
-// $_SESSION['login'] = "";
 if (!isset($_SESSION['login'])) {
   header('Location: logout.php');
 }
@@ -14,13 +13,11 @@ function matchesSearch($term, $search, $percentage) {
   }
 
   similar_text($term, $search, $percent);
-  echo $percent;
   if ($percent > $percentage) {
     return true;
   }
 
   similar_text($search, $term, $percent);
-  echo $percent;
   if ($percent > $percentage) {
     return true;
   }
