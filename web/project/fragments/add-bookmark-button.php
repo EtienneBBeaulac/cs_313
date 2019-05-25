@@ -1,5 +1,5 @@
-<div class="list-group-item">
+<div class="list-group-item add-bookmark">
   <div class="row justify-content-center">
-    <h5><i class="fas fa-plus"></i> Add bookmark</h5>
+    <div class="font-weight-bold"><i class="fas fa-plus"></i> Add bookmark</div>
   </div>
 </div>

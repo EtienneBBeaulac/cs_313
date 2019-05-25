@@ -66,3 +66,10 @@ body {
     color: white;
     text-decoration: none;
 }
+
+.add-bookmark {
+    background: rgba(0, 0, 0, 0);
+    border: 1px solid #28A745;
+    font-size: 30px;
+    color: #28A745;
+}
