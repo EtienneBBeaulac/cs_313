@@ -10,11 +10,13 @@ function matchesSearch($term, $search, $percentage) {
   $search = strtoupper($search);
 
   similar_text($term, $search, $percent);
+  echo $percent;
   if ($percent > $percentage) {
     return true;
   }
 
   similar_text($search, $term, $percent);
+  echo $percent;
   if ($percent > $percentage) {
     return true;
   }
