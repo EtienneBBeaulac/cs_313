@@ -21,6 +21,7 @@ if (!isset($_SESSION['login'])) {
   require 'database-connection.php'; ?>
   <div class="container bookmarks-container">
     <?php
+    if ($_SERVER["REQUEST_METHOD"] != "GET" && !isset($_GET['search'])) {
     $stmt = $db->prepare('SELECT bookmark_name, bookmark_url FROM user_bookmark WHERE user_id=:user_id');
     $stmt->execute(array(':user_id' => $_SESSION['login']['id']));
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -34,6 +35,7 @@ if (!isset($_SESSION['login'])) {
     } else {
       echo "You have no bookmarks";
     }
+  }
     ?>
   </div>
   <?php require 'bootstrap-bottom.php' ?>
