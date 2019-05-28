@@ -2,6 +2,13 @@
 session_start();
 require 'database-connection.php';
 echo getenv('DATABASE_URL');
+$dbOpts = parse_url($dbUrl);
+
+    echo $dbOpts["host"];
+    echo $dbOpts["port"];
+    echo $dbOpts["user"];
+    echo $dbOpts["pass"];
+    echo ltrim($dbOpts["path"], '/'); 
 
 if (isset($_POST['username']) && isset($_POST['password'])) {
   $username = test_input($_POST['username']);
