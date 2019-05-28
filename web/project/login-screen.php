@@ -3,6 +3,59 @@ session_start();
 if (isset($_SESSION['login'])) {
   header('Location: home.php');
 }
+$username = '';
+$unErr = '';
+$pwErr = '';
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $unErr = verifyUsername();
+  $pwErr = verifyPassword();
+  if ($unErr == '' && $pwErr == '') {
+    $username = test_input($_POST['username']);
+    $password = test_input($_POST['password']);
+
+    $stmt = $db->prepare('SELECT id, username, password, email FROM user_account WHERE username=:username');
+    $stmt->execute(array(':username' => $username));
+    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    if (!empty($rows)) {
+      foreach ($rows as $user) {
+        if (password_verify($password, $user['password'])) {
+          loginSuccess($user);
+        } else {
+          $pwErr = '* Incorrect password';
+        }
+      }
+    } else {
+      $unErr = '* Username does not exist';
+    }
+  }
+}
+
+function verifyPassword()
+{
+  if (!isset($_POST['password'])) {
+    return '* Password is required';
+  }
+  return '';
+}
+
+function verifyUsername()
+{
+  if (!isset($_POST['username'])) {
+    return '* Username is required';
+  }
+  if (!preg_match("/^[0-9a-zA-Z_]{5,}$/", test_input($_POST['username']))) {
+    return '* Username must be bigger than 5 characters and contain only numbers, letters, and underscores';
+  }
+  return '';
+}
+
+function loginSuccess($user)
+{
+  echo 'success!';
+  $_SESSION['login'] = ['id' => $user['id'], 'username' => $user['username'], 'email' => $user['email']];
+  header('Location: home.php');
+  die();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,12 +73,12 @@ if (isset($_SESSION['login'])) {
     <div class="row">
       <div class="user-card" id="bookmark">
         <h1>Sign In</h1>
-        <form action="login.php" method="post">
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
           <div class="input-group mb-3">
             <div class="input-group-append">
               <span class="input-group-text"><i class="fas fa-user"></i></span>
             </div>
-            <input type="text" name="username" class="form-control" value="" placeholder="username" required autofocus>
+            <input type="text" name="username" class="form-control" value="<?php echo $username ?>" placeholder="username" required autofocus>
           </div>
           <div class="input-group mb-2">
             <div class="input-group-append">
@@ -38,13 +91,10 @@ if (isset($_SESSION['login'])) {
           </div>
         </form>
         <div class="mt-4">
-					<div class="d-flex justify-content-center links">
-						Don't have an account? <a href="signup.php" class="ml-2">Sign Up</a>
-					</div>
-					<!-- <div class="d-flex justify-content-center links">
-						<a href="#">Forgot your password?</a>
-					</div> -->
-				</div>
+          <div class="d-flex justify-content-center links">
+            Don't have an account? <a href="signup.php" class="ml-2">Sign Up</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>

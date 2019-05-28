@@ -1,12 +1,6 @@
 <?php
 try {
-  $dbUrl;
-  $dbOpts;
-  $dbHost;
-  $dbPort;
-  $dbUser;
-  $dbPassword;
-  $dbName;
+  $dbUrl = '';
   if (null != getenv('DATABASE_URL') && '' != getenv('DATABASE_URL')) {
     $dbUrl = getenv('DATABASE_URL');
   } else {
