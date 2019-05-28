@@ -16,6 +16,14 @@ if (isset($_SESSION['login'])) {
 </head>
 
 <body>
+  <?php
+  include 'env.php';
+echo getenv('DB_HOST');
+echo getenv('DB_PORT');
+echo getenv('DB_USERNAME'); 
+echo getenv('DB_PASSWORD');
+echo getenv('DB_NAME');
+  ?>
   <div class="container vertical-center justify-content-center">
     <div class="row">
       <div class="user-card" id="bookmark">
