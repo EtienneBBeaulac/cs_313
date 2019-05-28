@@ -1,6 +1,7 @@
 <?php
 session_start();
 require 'database-connection.php';
+echo getenv('DATABASE_URL');
 
 if (isset($_POST['username']) && isset($_POST['password'])) {
   $username = test_input($_POST['username']);
@@ -25,13 +26,13 @@ function loginSuccess($user)
 {
   echo 'success!';
   $_SESSION['login'] = ['id' => $user['id'], 'username' => $user['username'], 'email' => $user['email']];
-  header('Location: home.php');
+  // header('Location: home.php');
   die();
 }
 
 function loginFailed()
 {
   echo 'failed!';
-  header('Location: logout.php');
+  // header('Location: logout.php');
   die();
 }

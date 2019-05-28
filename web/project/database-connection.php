@@ -1,5 +1,12 @@
 <?php
 try {
+  $dbUrl;
+  $dbOpts;
+  $dbHost;
+  $dbPort;
+  $dbUser;
+  $dbPassword;
+  $dbName;
   if (null !== getenv('DATABASE_URL') && '' !== getenv('DATABASE_URL')) {
     $dbUrl = getenv('DATABASE_URL');
 
@@ -9,8 +16,7 @@ try {
     $dbPort = $dbOpts["port"];
     $dbUser = $dbOpts["user"];
     $dbPassword = $dbOpts["pass"];
-    $dbName = ltrim($dbOpts["path"], '/');
-    file_put_contents('test.txt', $dbUrl);
+    $dbName = ltrim($dbOpts["path"], '/'); 
   } else {
     require 'env.php';
     $dbHost = getenv('DB_HOST');
