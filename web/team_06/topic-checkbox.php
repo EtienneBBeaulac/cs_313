@@ -1,0 +1,1 @@
+<input type="checkbox" name="topics[<?php echo $topic['name'] ?>]" id="<?php echo $topic['id'] ?>" value="<?php echo $topic['id'] ?>"> <?php echo $topic['name'] ?>

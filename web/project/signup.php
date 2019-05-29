@@ -26,6 +26,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $hash = password_hash($password, PASSWORD_DEFAULT);
         echo "<br>Will register account in database";
         echo "<br>{$hash}";
+        $sql_insert = "INSERT INTO user_account (id, username, password, email, password_hash_algorithm) VALUES (DEFAULT, '{$username}', '{$hash}', '{$email}', 'PASSWORD_DEFAULT')";
+        if ($db->exec($sql_insert) === false) {
+          echo "Error occured"; // TODO: make this nicer
+        } else {
+          header('Location: login.php');
+        }
       }
     }
   }
@@ -135,7 +141,7 @@ function checkPassword($pw, $cpw)
         </form>
         <div class="mt-4">
           <div class="d-flex justify-content-center links">
-            Already have an account? <a href="login-screen.php" class="ml-2">Sign In</a>
+            Already have an account? <a href="login.php" class="ml-2">Sign In</a>
           </div>
         </div>
       </div>

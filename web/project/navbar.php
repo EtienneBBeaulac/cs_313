@@ -7,7 +7,7 @@ if (!isset($_SESSION['login'])) {
 }
 ?>
 <nav class="navbar navbar-expand-sm bg-new navbar-dark sticky-top">
-  <a class="navbar-brand" href="login-screen.php">Bookmarkz</a>
+  <a class="navbar-brand" href="login.php">Bookmarkz</a>
   <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>
   </button> -->

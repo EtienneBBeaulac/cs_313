@@ -3,11 +3,11 @@
         <form class="input-group mb-3" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="get">
           <input type="text" name="search" class="form-control" placeholder="Search...">
           <div class="input-group-append">
-            <button class="btn btn-outline-secondary" type="submit">Search</button>
+            <button class="btn btn-outline-light" type="submit">Search</button>
           </div>
         </form>
     </div>
     <div class="col-auto">
-        <button class="btn btn-outline-secondary"><i class="fas fa-edit"></i> Edit</button>
+        <button class="btn btn-outline-light"><i class="fas fa-edit"></i> Edit</button>
     </div>
 </div>

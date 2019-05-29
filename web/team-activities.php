@@ -21,6 +21,7 @@
       <div class="list-group ">
         <a href="team_03/index.php" class="list-group-item list-group-item-action">03 Teach</a>
         <a href="team_05/home.php" class="list-group-item list-group-item-action">05 Teach</a>
+        <a href="team_06/home.php" class="list-group-item list-group-item-action">06 Teach</a>
         <!-- <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
         <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
         <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
