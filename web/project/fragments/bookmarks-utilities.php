@@ -7,7 +7,4 @@
           </div>
         </form>
     </div>
-    <div class="col-auto">
-        <button class="btn btn-outline-light"><i class="fas fa-edit"></i> Edit</button>
-    </div>
 </div>
