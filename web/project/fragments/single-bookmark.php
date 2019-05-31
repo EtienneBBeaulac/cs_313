@@ -32,6 +32,5 @@
       <button class="btn btn-success" onclick="finishEdit('<?php echo $bm['id']; ?>')">Save</button>
       <div class="btn btn-danger" onclick="deleteBm('<?php echo $bm['id']; ?>')"><i class="fas fa-trash"></i></div>
     </div>
-
   </form>
 </div>
