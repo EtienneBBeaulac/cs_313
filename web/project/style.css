@@ -68,15 +68,28 @@ body {
     text-decoration: none;
 }
 
-.add-bookmark {
+.add-bookmark-green {
     background: rgba(0, 0, 0, 0);
     border: 1px solid #28A745;
     font-size: 24px;
     color: #28A745;
 }
 
-.add-bookmark:hover {
+.add-bookmark-green:hover {
     background: #28A745;
+    color: white;
+    cursor: pointer;
+}
+
+.add-bookmark-red {
+    background: rgba(0, 0, 0, 0);
+    border: 1px solid #FF5A52;
+    font-size: 24px;
+    color: #FF5A52;
+}
+
+.add-bookmark-red:hover {
+    background: #FF5A52;
     color: white;
     cursor: pointer;
 }

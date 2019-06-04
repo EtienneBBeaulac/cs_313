@@ -15,6 +15,7 @@ if (!isset($_SESSION['login'])) {
 </head>
 
 <body>
+  <h1>Welcome <?php echo $_SESSION['login']['username'] ?></h1>
   <button onclick="window.location.href='logout.php'">Logout</button>
 </body>
 

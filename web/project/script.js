@@ -1,5 +1,15 @@
 function showAddBookmarkForm() {
   $("#add-bookmark-form").toggleClass("d-none");
+  console.log('in function');
+  if (!$("#add-bookmark-form").hasClass("d-none")) {
+    $("#add-button-div").html("<i class='fas fa-minus'></i>");
+    console.log('has d-none');
+  } else {
+    $("#add-button-div").html("<i class='fas fa-plus'></i>");
+    console.log('not has d-none');
+  }
+  $("#add-bookmark").toggleClass("add-bookmark-green");
+  $("#add-bookmark").toggleClass("add-bookmark-red");
 }
 
 function startEdit(id) {
