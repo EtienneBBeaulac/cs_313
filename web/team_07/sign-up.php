@@ -106,7 +106,7 @@ function checkPassword($pw, $cpw)
     <div class="row">
       <div class="user-card" id="bookmark">
         <h1>Sign Up</h1>
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" onsubmit="validate()">
           <div class="input-group">
             <div class="input-group-append">
               <span class="input-group-text"><i class="fas fa-user"></i></span>
@@ -148,6 +148,16 @@ function checkPassword($pw, $cpw)
     </div>
   </div>
   <?php require '../project/bootstrap-bottom.php' ?>
+  <script>
+    function validate() {
+      let pass = document.getElementById('password').value;
+      let cpass = document.getElementById('cpassword').value;
+      if (pass == cpass) {
+        return true;
+      }
+      return false;
+    }
+  </script>
 </body>
 
 </html>
