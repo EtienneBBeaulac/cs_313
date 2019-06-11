@@ -19,8 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Error occured"; // TODO: make this nicer
       }
     } else {
-      echo 'problem';
-      // do something
+      
     }
   } else if (isset($_POST['update'])) { }
 }
@@ -69,6 +68,7 @@ function matchesSearch($term, $search, $percentage)
       require 'fragments/bookmarks-utilities.php';
     } else {
       echo '<h2 class="text-center">Add a bookmark.</h2>';
+      require 'fragments/add-bookmark-button.php';
     }
     if (!empty($rows)) {
       $search = isset($_GET['search']) ? test_input($_GET['search']) : '';
